@@ -1,16 +1,16 @@
 
-Zsquid:UselessImportCheck"/Remove this unused import 'java.sql.Statement'.(ÏÖÔø8…‡½¿-
-msquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(€åç¨8ÒöÀ¿-
-dsquid:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.(”‘–Çúÿÿÿÿ
-|%squid:RedundantThrowsDeclarationCheck"KRemove the redundant 'java.io.IOException' thrown exception declaration(s).(ãøÙé
-<squid:S2068" Remove this hard-coded password.(”‘–Çúÿÿÿÿ
 N
 squid:S106"9Replace this use of System.out or System.err by a logger.(©îĞe
-Qsquid:S1161":Add the "@Override" annotation above this method signature(ãøÙé
-[
-squid:S106("9Replace this use of System.out or System.err by a logger.(Şàš¬øÿÿÿÿ8ù…»¿-
 isquid:CommentedOutCodeLine!"<This block of commented-out lines of code should be removed.(óş£8ÙÀÃ¿-
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(Ÿ©‰­ûÿÿÿÿ
+<squid:S2068" Remove this hard-coded password.(”‘–Çúÿÿÿÿ
 O
 squid:S106"9Replace this use of System.out or System.err by a logger.(ÕÔÜ¶
+Zsquid:UselessImportCheck"/Remove this unused import 'java.sql.Statement'.(ÏÖÔø8…‡½¿-
+|%squid:RedundantThrowsDeclarationCheck"KRemove the redundant 'java.io.IOException' thrown exception declaration(s).(ãøÙé
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ÿ©‰­ûÿÿÿÿ
+dsquid:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.(”‘–Çúÿÿÿÿ
+[
+squid:S106("9Replace this use of System.out or System.err by a logger.(Şàš¬øÿÿÿÿ8ù…»¿-
+Qsquid:S1161":Add the "@Override" annotation above this method signature(ãøÙé
+msquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(€åç¨8ÒöÀ¿-

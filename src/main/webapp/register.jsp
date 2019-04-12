@@ -14,44 +14,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h3>
-    Registration Form
-</h3>
-
-
-<form name="registration" method="post" action="Registerservlet">
-    <table border="0" width="30%" cellpadding="3">
-        <thead>
-        <tr>
-            <th colspan="2">Registration Details</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>First Name</td>
-            <td><input required type="text" name="first_Name" value="" placeholder="first name"></td>
-        </tr>
-        <tr>
-            <td>Last Name</td>
-            <td><input type="text" required name="last_Name" value="" placeholder="last name"></td>
-        </tr>
-        <tr>
-            <td>Username</td>
-            <td><input type="text" required value="" name="userName" placeholder="username"></td>
-        </tr>
-        <tr>
-            <td>Password</td>
-            <td><input type="password" required name="password" value="" placeholder="Password"></td>
-        </tr>
-        <td>
-            <tr>
-                <td><input type="submit" value="submit"></td>
-                <td><input type="reset" value="Cancel"></td>
-            </tr>
-        </tbody>
-    </table>
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-5" align="center" style="border:1px solid slategrey;background:#70809038">
+            <h3>Registration Form</h3>
+            <form name="registration" class="form-group" method="post" action="Registerservlet">
+                <label>First Name</label>
+                <input class="table-secondary" required type="text" name="first_Name" value="" placeholder="First Name"><br>
+                <label>Last Name</label>
+                <input type="text"  class="table-secondary" required name="last_Name" value="" placeholder="Last Name"><br>
+                <label>Username</label>
+                <input type="text" class="table-secondary" required value="" name="userName" placeholder="Username"><br>
+                <label>Password</label>
+                <input type="password" class="table-secondary" required name="password" value="" placeholder="Password"><br>
+                <br>
+                <span>
+                    <input type="submit" class="btn btn-success" value="submit">
+                    <input type="reset" class="btn btn-default" value="Cancel">
+                </span>
+            </form>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
 </body>
 </html>

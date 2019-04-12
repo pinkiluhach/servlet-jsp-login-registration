@@ -1,5 +1,6 @@
 package com.servlet;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -7,37 +8,43 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-
 import java.sql.PreparedStatement;
-import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
- * Servlet implementation class LoginController
+ * Servlet implementation class RegisterationController
  */
-//@WebServlet("/RegisterServlet")
+@WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
+    private final static Logger LOGGER =
+            Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, IOException {
         try {
-            String uname = request.getParameter("userName");
-            String frstname = request.getParameter("first_Name");
+            String username = request.getParameter("userName");
+            String firstname = request.getParameter("first_Name");
             String lastname = request.getParameter("last_Name");
-            String pwd = request.getParameter("password");
-            System.out.println("username" + uname + "password" + pwd + "___________" + lastname + frstname);
+            String password = request.getParameter("password");
+            LOGGER.info("Username=" + username + "First Name=" + firstname + "Last Name=" + lastname + "Password=" + password);
             Class.forName("com.mysql.jdbc.Driver");
-            System.out.println("\\\\ dirver loaded");
+            LOGGER.info("Dirver loaded");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/userdetails", "root", "root");
-            System.out.println("connection established in registration page");
+            LOGGER.info("Connection established");
             PreparedStatement st = con.prepareStatement("INSERT INTO user (firstname,lastname,username,password) VALUES (?, ?, ?, ?)");
-            st.setString(1, frstname);
-            st.executeQuery();
-//            st.executeUpdate("INSERT INTO user (firstname,lastname,username,password) VALUES('" + frstname + "','" + lastname + "','" + uname + "','" + pwd + "');");
-            //  response.sendRedirect("");
-            request.setAttribute("fnme", frstname);
-            request.setAttribute("lnme", lastname);
-            request.getRequestDispatcher("registrationcom.jsp").forward(request, response);
-
+            st.setString(1, firstname);
+            st.setString(2, lastname);
+            st.setString(3, username);
+            st.setString(4, password);
+            st.executeUpdate();
+            LOGGER.finer("Record Inserted Succesfully");
+            request.setAttribute("firstname", firstname);
+            request.setAttribute("lastname", lastname);
+            request.getRequestDispatcher("registrationcomplete.jsp").forward(request, response);
+            LOGGER.info("Redirect Page to RegistrationComplete Page");
         } catch (Exception e) {
-            System.err.println(e);
+            LOGGER.log(Level.SEVERE, "Exception Occur" + e);
         }
     }
 

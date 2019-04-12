@@ -1,17 +1,17 @@
 
-^squid:S2095"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(óöŽ˜
-dsquid:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.(”‘–Çúÿÿÿÿ
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(‰ŒÚ†øÿÿÿÿ
+Qsquid:S1161":Add the "@Override" annotation above this method signature(ãøÙé
 N
 squid:S106"9Replace this use of System.out or System.err by a logger.(©îÐe
-^squid:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(‹½»ž
-T
-squid:S106%"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍþÿÿÿÿ
-O
-squid:S106"9Replace this use of System.out or System.err by a logger.(ô¹´™
-Qsquid:S1161":Add the "@Override" annotation above this method signature(ãøÙé
-<squid:S2068" Remove this hard-coded password.(”‘–Çúÿÿÿÿ
 O
 squid:S106!"9Replace this use of System.out or System.err by a logger.(º§…Æ
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(‰ŒÚ†øÿÿÿÿ
+^squid:S2095"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(óöŽ˜
+O
+squid:S106"9Replace this use of System.out or System.err by a logger.(ô¹´™
+T
+squid:S106%"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍþÿÿÿÿ
+<squid:S2068" Remove this hard-coded password.(”‘–Çúÿÿÿÿ
+^squid:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(‹½»ž
+dsquid:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.(”‘–Çúÿÿÿÿ
 |%squid:RedundantThrowsDeclarationCheck"KRemove the redundant 'java.io.IOException' thrown exception declaration(s).(ãøÙé

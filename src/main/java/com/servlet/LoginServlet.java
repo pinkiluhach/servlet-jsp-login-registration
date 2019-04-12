@@ -1,40 +1,43 @@
 package com.servlet;
 
 import java.sql.*;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
-//@WebServlet("/login")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
+    private final static Logger LOGGER =
+            Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, IOException {
-        String un = request.getParameter("username");
-        String pw = request.getParameter("password");
-
-
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            System.out.println("\\\\ dirver loaded");
+            LOGGER.info("Dirver loaded");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/userdetails", "root", "root");
-            System.out.println("connection established for login");
+            LOGGER.info("Connection established");
             Statement st = con.createStatement();
             ResultSet rs;
-            rs = st.executeQuery("select * from user where username='" + un + "' and password='" + pw + "'");
+            rs = st.executeQuery("select * from user where username='" + username + "' and password='" + password + "'");
             if (rs.next()) {
-                System.out.println("Redirect to Success page" + un);
-                request.setAttribute("usrname", un);
-                request.getRequestDispatcher("Sucess.jsp").forward(request, response);
+                LOGGER.info("Redirect to Success page");
+                request.setAttribute("username", username);
+                request.getRequestDispatcher("sucess.jsp").forward(request, response);
             } else {
-                System.out.println("Redirect to Error page");
-                response.sendRedirect("Error.jsp");
+                LOGGER.info("Redirect to Error page");
+                response.sendRedirect("error.jsp");
             }
         } catch (Exception e) {
-            System.out.println(e);
+            LOGGER.log(Level.SEVERE, "Exception Occur", e);
         }
     }
 
